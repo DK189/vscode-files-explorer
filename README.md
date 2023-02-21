@@ -1,0 +1,1 @@
+# vscode-files-explorer
