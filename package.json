@@ -1,14 +1,15 @@
 {
     "name": "vscode-files-explorer",
     "displayName": "Files Explorer",
-    "description": "Supercharge for Files Explorer view",
-    "version": "0.0.1",
+    "description": "Files Explorer Supercharged",
+    "version": "1.0.0",
     "publisher": "HenryTran",
     "author": {
         "name": "Henry Trần",
-        "email": "tran.trong@outlook.com",
-        "url": "https://kingdark.org/"
+        "email": "henry@dk189.app",
+        "url": "https://dk189.app/"
     },
+    "icon": "./media/vscode-files-explorer-logo.png",
     "engines": {
         "vscode": "^1.75.0"
     },
