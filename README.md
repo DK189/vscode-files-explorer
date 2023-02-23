@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <a title="Learn more about GitLens" href="https://gitkraken.com/gitlens?utm_source=gitlens-extension&utm_medium=in-app-links&utm_campaign=gitlens-logo-links"><img width="476px" src="./media/logo.svg" alt="GitLens Logo" /></a>
+  <a title="Learn more about Files Explorer" href="https://kingdark.org/vscode-files-explorer/?utm_source=vscode-files-explorer&utm_medium=in-app-links&utm_campaign=vscode-files-explorer-logo-links"><img height="240px" style="border-radius: 50%" src="https://kingdark.org/vscode-files-explorer/media/vscode-files-explorer-logo.png" alt="Files Explorer Logo" /></a>
 </p>
 
 # Files Explorer `Supercharged` for Visual Studio Code
@@ -9,29 +9,28 @@ Files Explorer supercharged Original Explorer inside VS Code and unlocks magic f
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+\+ Command Palette: **Expand Folders in Explorer**
 
-\!\[feature X\]\(images/feature-x.png\)
+\+ Explorer View Extend: **Files Explorer (Listview)**
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+\+ Workbench Files menu: **Expand Folders in Explorer**
 
 
-## Known Issues
+<img width="420px" style="border-radius: 50%" src="https://kingdark.org/vscode-files-explorer/media/vscode-files-explorer-logo.png" alt="Files Explorer's Screenshot" />
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+[Files Explorer `Supercharged`](media/screenshots/Screen%20Shot%202023-02-23%20at%2011.10.26.png)
 
+
+---
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
+### 1.0.0 (February 23, 2023)
 
 Initial release of Files Explorer
 
 Added features:
-- VSCode-Command: Expand all folder
-- VSCore-View-Menu: Expand all folder button
+- VSCode-Command: Expand Folders in Explorer
+- VSCore-View-Menu: Expand Folders in Explorer button
 - VSCode-View: Files Explorer (Listview)
 

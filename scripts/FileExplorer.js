@@ -17,6 +17,7 @@ FileExplorer.prototype.expandAllFolder = async function expandAllFolder() {
     await vscode.window.withProgress({
         location: vscode.ProgressLocation.Notification,
         title: "Expand all folder",
+        cancellable: true,
     }, async (progress, token) => {
         progress.report({ increment: 0 });
         var allFiles = await vscode.workspace.findFiles("**/*");

@@ -1,34 +1,38 @@
 {
     "name": "vscode-files-explorer",
     "displayName": "Files Explorer",
-    "description": "Files Explorer Supercharged",
+    "description": "Files Explorer `Supercharged` for Visual Studio Code",
     "version": "1.0.0",
-    "publisher": "HenryTran",
+    "publisher": "DK189",
     "author": {
         "name": "Henry Trần",
         "email": "henry@dk189.app",
         "url": "https://dk189.app/"
     },
-    "icon": "./media/vscode-files-explorer-logo.png",
+    "icon": "media/vscode-files-explorer-logo.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DK189/vscode-files-explorer"
+    },
     "engines": {
         "vscode": "^1.75.0"
     },
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./scripts/extension.js",
+    "activationEvents": [],
+    "main": "dist/extension.js",
     "contributes": {
-        "commands": [{
-            "command": "vscode-files-explorer.commands.expand-all-folder",
-            "title": "Expand all folder",
-            "icon":{
-                "light": "./media/light/expand-all.svg",
-                "dark": "./media/dark/expand-all.svg"
+        "commands": [
+            {
+                "command": "vscode-files-explorer.commands.expand-all-folder",
+                "title": "Expand Folders in Explorer",
+                "icon": {
+                    "light": "media/light/expand-all.svg",
+                    "dark": "media/dark/expand-all.svg"
+                }
             }
-        }],
+        ],
         "menus": {
             "view/title": [
                 {
@@ -45,22 +49,34 @@
                     "name": "Files Explorer (Listview)"
                 }
             ]
-        }
+        },
+        "viewsWelcome": [
+            {
+                "view": "vscode-files-explorer.views.files-explorer-list",
+                "contents": "You have not yet opened folder.",
+                "when": "workbenchState == empty"
+            }
+        ]
     },
     "scripts": {
         "lint": "eslint .",
         "pretest": "npm run lint",
-        "test": "node ./test/runTest.js"
+        "test": "node ./test/runTest.js",
+        "vscode:prepublish": "npm run esbuild-base -- --minify",
+        "esbuild-base": "esbuild ./scripts/extension.js --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+        "esbuild": "npm run esbuild-base -- --sourcemap",
+        "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch"
     },
     "devDependencies": {
-        "@types/vscode": "^1.75.0",
         "@types/glob": "^8.0.1",
         "@types/mocha": "^10.0.1",
         "@types/node": "16.x",
+        "@types/vscode": "^1.75.0",
+        "@vscode/test-electron": "^2.2.2",
+        "esbuild": "^0.17.10",
         "eslint": "^8.33.0",
         "glob": "^8.1.0",
         "mocha": "^10.1.0",
-        "typescript": "^4.9.4",
-        "@vscode/test-electron": "^2.2.2"
+        "typescript": "^4.9.4"
     }
 }
