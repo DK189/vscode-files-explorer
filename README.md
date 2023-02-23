@@ -17,7 +17,7 @@ Files Explorer supercharged Original Explorer inside VS Code and unlocks magic f
 \+ Workbench Files menu: **Expand Folders in Explorer**
 
 
-<img width="420px" style="border-radius: 50%" src="https://kingdark.org/vscode-files-explorer/media/screenshots/Screen%20Shot%202023-02-23%20at%2011.10.26.png" alt="Files Explorer's Screenshot" />
+<img width="420px" src="https://kingdark.org/vscode-files-explorer/media/screenshots/Screen%20Shot%202023-02-23%20at%2011.10.26.png" alt="Files Explorer's Screenshot" />
 
 [Files Explorer `Supercharged`](media/screenshots/Screen%20Shot%202023-02-23%20at%2011.10.26.png)
 
