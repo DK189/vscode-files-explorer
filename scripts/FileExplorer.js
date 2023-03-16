@@ -1,6 +1,6 @@
 const vscode = require('vscode');
 // const fs = require('fs');
-const path = require("path");
+const path = require("./path");
 
 const FileSystemProvider = require("./FileSystemProvider");
 
@@ -13,14 +13,25 @@ function FileExplorer() {
 
 }
 
-FileExplorer.prototype.expandAllFolder = async function expandAllFolder() {
+FileExplorer.prototype.expandAllFolder = async function expandAllFolder(arg0) {
+    
+    let _a;
+    let fsPath = arg0 ? arg0.fsPath : "";
+    fsPath = fsPath || "";
+    let filterExpr = "**/*";
+    if (fsPath) {
+        const workspaceFolder = ((_a = vscode.workspace.workspaceFolders) !== null && _a !== void 0 ? _a : []).filter(folder => folder.uri.scheme === 'file' && fsPath.startsWith(folder.uri.fsPath))[0];
+        let normalFsPath = fsPath.replace(workspaceFolder.uri.fsPath + "/", "");
+        filterExpr = path.join(normalFsPath, "**/*");
+    }
     await vscode.window.withProgress({
         location: vscode.ProgressLocation.Notification,
         title: "Expand all folder",
         cancellable: true,
     }, async (progress, token) => {
         progress.report({ increment: 0 });
-        var allFiles = await vscode.workspace.findFiles("**/*");
+        var allFiles = await vscode.workspace.findFiles(filterExpr);
+        allFiles = allFiles.filter(f => f.fsPath.startsWith(fsPath));
         allFiles.sort();
         
         let optimizeOpenEntries = allFiles.reduce((a, file) => {
@@ -38,18 +49,13 @@ FileExplorer.prototype.expandAllFolder = async function expandAllFolder() {
         progress.report({ increment: 15, ...extMsg });
         
         for (let {file} of letOpenEntries.map((file, index) => ({file, index}))) {
-            
             await vscode.commands.executeCommand('revealInExplorer', file);
-
             progress.report({ increment: ((85/letOpenEntries_length)), ...extMsg });
-
             if (token.isCancellationRequested) {
                 break;
             }
         }
-
-        // progress.report({ increment: 100 });
-    })
+    });
 };
 
 FileExplorer.prototype.RegisterCommands = function RegisterCommands(/** @type {vscode.ExtensionContext} */ context) {

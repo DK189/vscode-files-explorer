@@ -35,3 +35,16 @@ Added features:
 - VSCode-Command: Expand Folders in Explorer
 - VSCore-View-Menu: Expand Folders in Explorer button
 - VSCode-View: Files Explorer (Listview)
+
+### 1.0.1 (February 23, 2023)
+
+Added features:
+
+- Pretty README.md
+
+### 1.1.0 (March 16, 2023)
+
+Added features:
+
+- Folder context menu: Expand Folders in Explorer ([#1](https://github.com/DK189/vscode-files-explorer/issues/1))
+- vscode-web compatible

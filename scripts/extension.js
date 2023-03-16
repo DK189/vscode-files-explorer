@@ -12,7 +12,8 @@ const fileExplorer = new FileExplorer();
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-    global.vscode = vscode;
+    // console.log("process.platform", process.platform);
+    // window.vscode = vscode;
     // vscode.window.showInformationMessage('vscode-files-explorer activate. ');
 
     fileExplorer.RegisterCommands(context);

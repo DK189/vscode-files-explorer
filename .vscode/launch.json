@@ -11,6 +11,8 @@
 			"request": "launch",
 			"args": [
 				"--extensionDevelopmentPath=${workspaceFolder}",
+                "--extensionDevelopmentKind=web",
+                "--enable-proposed-api=DK189.vscode-files-explorer",
                 "${workspaceFolder}"
 			]
 		},
